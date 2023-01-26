@@ -33,17 +33,5 @@ public class Division : Operation
         PrintableSentence = () => $"Division of {Left.PrintableSentence.Invoke()} by {Right.PrintableSentence.Invoke()}";
     }
 
-    public override double ToResult()
-    {
-        return LeftValue / RightValue;
-    }
-    public override string Print()
-    {
-        return $"{Printable.Invoke()} = {ToResult()}";
-    }
-
-    public override string PrintSentence()
-    {
-        return PrintableSentence.Invoke() + " is " + ToResult();
-    }
+    public override double ToResult() => LeftValue / RightValue;
 }
