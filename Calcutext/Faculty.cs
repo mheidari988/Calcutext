@@ -29,9 +29,4 @@ public class Faculty : Operation
     {
         return $"{Printable.Invoke()}!) = " + ToResult();
     }
-
-    public override string PrintSentence()
-    {
-        return PrintableSentence.Invoke() + " is " + ToResult();
-    }
 }

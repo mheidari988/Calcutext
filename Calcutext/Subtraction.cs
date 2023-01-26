@@ -33,17 +33,5 @@ public class Subtraction : Operation
         PrintableSentence = () => $"Subtraction of {Left.PrintableSentence.Invoke()} and {Right.PrintableSentence.Invoke()}";
     }
 
-    public override double ToResult()
-    {
-        return LeftValue - RightValue;
-    }
-    public override string Print()
-    {
-        return $"{Printable.Invoke()} = {ToResult()}";
-    }
-
-    public override string PrintSentence()
-    {
-        return PrintableSentence.Invoke() + " is " + ToResult();
-    }
+    public override double ToResult() => LeftValue - RightValue;
 }

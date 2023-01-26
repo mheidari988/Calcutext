@@ -6,6 +6,6 @@ public abstract class Operation : IOperation
     protected double LeftValue { get; set; }
     protected double RightValue { get; set; }
     public abstract double ToResult();
-    public abstract string Print();
-    public abstract string PrintSentence();
+    public virtual string Print() => $"{Printable.Invoke()} = {ToResult()}";
+    public virtual string PrintSentence() => PrintableSentence.Invoke() + " is " + ToResult();
 }
