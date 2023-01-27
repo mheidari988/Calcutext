@@ -241,7 +241,7 @@ public class CalcutextTests
         sumResult.Should().Be($"Sum of 4 and 3.5 is 7.5");
         multiplicationResult.Should().Be($"{Multiplication.OperationName} 4 and 3.5 is 14");
         divisionResult.Should().Be($"{Division.OperationName} 4 by 3.5 is 1.1428571428571428");
-        subtractionResult.Should().Be($"Subtraction of 4 and 3.5 is 0.5");
+        subtractionResult.Should().Be($"{Subtraction.OperationName} 4 and 3.5 is 0.5");
         facultyResult.Should().Be($"{Faculty.OperationName} 4 is 24");
         fractionResult.Should().Be($"4/3.5 is 1.1428571428571428");
     }
@@ -277,7 +277,7 @@ public class CalcutextTests
         sumResult.Should().Be("Sum of LEFT_VALUE and RIGHT_VALUE is 30");
         multiplicationResult.Should().Be($"{Multiplication.OperationName} LEFT_VALUE and RIGHT_VALUE is 200");
         divisionResult.Should().Be($"{Division.OperationName} LEFT_VALUE by RIGHT_VALUE is 0.5");
-        subtractionResult.Should().Be("Subtraction of LEFT_VALUE and RIGHT_VALUE is -10");
+        subtractionResult.Should().Be($"{Subtraction.OperationName} LEFT_VALUE and RIGHT_VALUE is -10");
         facultyResult.Should().Be($"{Faculty.OperationName} LEFT_VALUE is 3628800");
         fractionResult.Should().Be("LEFT_VALUE/RIGHT_VALUE is 0.5");
     }
