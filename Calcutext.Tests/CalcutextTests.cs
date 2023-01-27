@@ -239,7 +239,7 @@ public class CalcutextTests
 
         // Assert
         sumResult.Should().Be($"Sum of 4 and 3.5 is 7.5");
-        multiplicationResult.Should().Be($"Multiplication of 4 and 3.5 is 14");
+        multiplicationResult.Should().Be($"{Multiplication.OperationName} 4 and 3.5 is 14");
         divisionResult.Should().Be($"{Division.OperationName} 4 by 3.5 is 1.1428571428571428");
         subtractionResult.Should().Be($"Subtraction of 4 and 3.5 is 0.5");
         facultyResult.Should().Be($"{Faculty.OperationName} 4 is 24");
@@ -275,7 +275,7 @@ public class CalcutextTests
 
         // Assert
         sumResult.Should().Be("Sum of LEFT_VALUE and RIGHT_VALUE is 30");
-        multiplicationResult.Should().Be("Multiplication of LEFT_VALUE and RIGHT_VALUE is 200");
+        multiplicationResult.Should().Be($"{Multiplication.OperationName} LEFT_VALUE and RIGHT_VALUE is 200");
         divisionResult.Should().Be($"{Division.OperationName} LEFT_VALUE by RIGHT_VALUE is 0.5");
         subtractionResult.Should().Be("Subtraction of LEFT_VALUE and RIGHT_VALUE is -10");
         facultyResult.Should().Be($"{Faculty.OperationName} LEFT_VALUE is 3628800");
@@ -296,8 +296,8 @@ public class CalcutextTests
         var multiplicationResult = multiplication.PrintSentence();
 
         // Assert
-        sumResult.Should().Be($"Sum of Multiplication of 2 and 3 and {Division.OperationName} 4 by 5 is 6.8");
+        sumResult.Should().Be($"Sum of {Multiplication.OperationName} 2 and 3 and {Division.OperationName} 4 by 5 is 6.8");
         divitionResult.Should().Be($"{Division.OperationName} 30 by Sum of 2 and 3 is 6");
-        multiplicationResult.Should().Be($"Multiplication of 9/4 and 2/3 is 1.5");
+        multiplicationResult.Should().Be($"{Multiplication.OperationName} 9/4 and 2/3 is 1.5");
     }
 }
