@@ -1,18 +1,20 @@
 ﻿namespace Calcutext;
 public class Faculty : Operation
 {
+    public const string OperationName = "faculty of";
+    
     public Faculty(double Value)
     {
         LeftValue = Value;
         Printable = () => $"({Value}";
-        PrintableSentence = () => $"Faculty of {Value}";
+        PrintableSentence = () => $"{OperationName} {Value}";
     }
 
     public Faculty(IOperation Value)
     {
         LeftValue = Value.ToResult();
         Printable = () => $"({Value.Printable.Invoke()}";
-        PrintableSentence = () => $"Faculty of {Value.PrintableSentence.Invoke()}";
+        PrintableSentence = () => $"{OperationName} {Value.PrintableSentence.Invoke()}";
     }
 
     public override double ToResult()

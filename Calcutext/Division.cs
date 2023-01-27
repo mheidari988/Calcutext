@@ -1,36 +1,40 @@
 ﻿namespace Calcutext;
 public class Division : Operation
 {
+    public const string OperationName = "division of";
+    public const string OperationSymbol = "/";
+    public const string OperationConnector = "by";
+    
     public Division(double Left, double Right)
     {
         LeftValue = Left;
         RightValue = Right;
-        Printable = () => $"({Left} / {Right})";
-        PrintableSentence = () => $"Division of {Left} by {Right}";
+        Printable = () => $"({Left} {OperationSymbol} {Right})";
+        PrintableSentence = () => $"{OperationName} {Left} {OperationConnector} {Right}";
     }
 
     public Division(double Left, IOperation Right)
     {
         LeftValue = Left;
         RightValue = Right.ToResult();
-        Printable = () => $"({Left} / {Right.Printable.Invoke()})";
-        PrintableSentence = () => $"Division of {Left} by {Right.PrintableSentence.Invoke()}";
+        Printable = () => $"({Left} {OperationSymbol} {Right.Printable.Invoke()})";
+        PrintableSentence = () => $"{OperationName} {Left} {OperationConnector} {Right.PrintableSentence.Invoke()}";
     }
 
     public Division(IOperation Left, double Right)
     {
         LeftValue = Left.ToResult();
         RightValue = Right;
-        Printable = () => $"({Left.Printable.Invoke()} / {Right})";
-        PrintableSentence = () => $"Division of {Left.PrintableSentence.Invoke()} by {Right}";
+        Printable = () => $"({Left.Printable.Invoke()} {OperationSymbol} {Right})";
+        PrintableSentence = () => $"{OperationName} {Left.PrintableSentence.Invoke()} {OperationConnector} {Right}";
     }
 
     public Division(IOperation Left, IOperation Right)
     {
         LeftValue = Left.ToResult();
         RightValue = Right.ToResult();
-        Printable = () => $"({Left.Printable.Invoke()} / {Right.Printable.Invoke()})";
-        PrintableSentence = () => $"Division of {Left.PrintableSentence.Invoke()} by {Right.PrintableSentence.Invoke()}";
+        Printable = () => $"({Left.Printable.Invoke()} {OperationSymbol} {Right.Printable.Invoke()})";
+        PrintableSentence = () => $"{OperationName} {Left.PrintableSentence.Invoke()} {OperationConnector} {Right.PrintableSentence.Invoke()}";
     }
 
     public override double ToResult() => LeftValue / RightValue;
