@@ -6,14 +6,14 @@ public class Faculty : Operation
     public Faculty(double Value)
     {
         LeftValue = Value;
-        Printable = () => $"({Value}";
+        Printable = () => $"({Value}!";
         PrintableSentence = () => $"{OperationName} {Value}";
     }
 
     public Faculty(IOperation Value)
     {
         LeftValue = Value.ToResult();
-        Printable = () => $"({Value.Printable.Invoke()}";
+        Printable = () => $"({Value.Printable.Invoke()}!";
         PrintableSentence = () => $"{OperationName} {Value.PrintableSentence.Invoke()}";
     }
 
@@ -29,6 +29,6 @@ public class Faculty : Operation
 
     public override string Print()
     {
-        return $"{Printable.Invoke()}!) = " + ToResult();
+        return $"{Printable.Invoke()}) = " + ToResult();
     }
 }
